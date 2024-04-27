@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityDBWebApi", "EntityDBWebApi\EntityDBWebApi.csproj", "{DE59DAE1-9F30-4807-9E32-E32DF89839EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Data", "LMS.Data\LMS.Data.csproj", "{0FFD504D-32BF-456F-ADA5-9CA6F08037DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE59DAE1-9F30-4807-9E32-E32DF89839EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE59DAE1-9F30-4807-9E32-E32DF89839EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE59DAE1-9F30-4807-9E32-E32DF89839EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE59DAE1-9F30-4807-9E32-E32DF89839EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FFD504D-32BF-456F-ADA5-9CA6F08037DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFD504D-32BF-456F-ADA5-9CA6F08037DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFD504D-32BF-456F-ADA5-9CA6F08037DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFD504D-32BF-456F-ADA5-9CA6F08037DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {019D9540-4FCC-4D9A-818F-386E439D6104}
+	EndGlobalSection
+EndGlobal
