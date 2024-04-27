@@ -1,5 +1,7 @@
 
 using LMS.Data.entities;
+using LMS.Data.Repositories;
+using LMS.Data.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityDBWebApi
@@ -22,6 +24,10 @@ namespace EntityDBWebApi
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
             });
+
+            //Dependency Injection
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             var app = builder.Build();
 
