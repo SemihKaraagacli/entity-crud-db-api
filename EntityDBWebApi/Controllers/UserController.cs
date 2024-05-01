@@ -1,6 +1,6 @@
-﻿using LMS.Data.entities;
+﻿using EntityDBWebApi.Models.User;
+using LMS.Data.entities;
 using LMS.Services.UserService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EntityDBWebApi.Controllers
@@ -27,8 +27,16 @@ namespace EntityDBWebApi.Controllers
             return await _userService.GetByIdAsync(id);
         }
         [HttpPost]
-        public async Task<User> Post([FromBody] User user)
+        public async Task<User> Post([FromBody] UserRequestModel userRequestModel)
         {
+            var user = new User
+            {
+                Firstname = userRequestModel.Firstname,
+                Lastname = userRequestModel.Lastname,
+                Email = userRequestModel.Email,
+                Password = userRequestModel.Password,
+                RoleId = userRequestModel.RoleId
+            };
             return await _userService.InsertAsync(user);
         }
         [HttpPut]
