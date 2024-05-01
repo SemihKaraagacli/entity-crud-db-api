@@ -1,4 +1,4 @@
-﻿namespace EntityDBWebApi.Models.User
+﻿namespace LMS.Services.Models
 {
     public class UserRequestModel
     {
