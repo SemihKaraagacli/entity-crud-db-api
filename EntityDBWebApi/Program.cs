@@ -1,4 +1,5 @@
 
+using AutoMapper;
 using LMS.Data.entities;
 using LMS.Data.Repositories;
 using LMS.Data.Repositories.User;
@@ -30,6 +31,14 @@ namespace EntityDBWebApi
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserService, UserService>();
+
+            //AutoMapper Config
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new LMS.Services.Mappers.MappingProfile());
+            });
+            IMapper mapper = mapperConfig.CreateMapper();
+            builder.Services.AddSingleton(mapper);
 
             var app = builder.Build();
 

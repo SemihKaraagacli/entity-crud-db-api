@@ -1,6 +1,7 @@
-﻿using LMS.Data.entities;
+﻿using AutoMapper;
+using LMS.Data.entities;
+using LMS.Services.Models;
 using LMS.Services.UserService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EntityDBWebApi.Controllers
@@ -9,12 +10,12 @@ namespace EntityDBWebApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //private readonly LMSDBContext _context;
-        //private readonly IUserRepository _userRepository;
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IMapper _mapper;
+        public UserController(IUserService userService, IMapper mapper)
         {
             _userService = userService;
+            _mapper = mapper;
         }
         [HttpGet]
         public async Task<IEnumerable<User>> GetUsers()
@@ -27,8 +28,9 @@ namespace EntityDBWebApi.Controllers
             return await _userService.GetByIdAsync(id);
         }
         [HttpPost]
-        public async Task<User> Post([FromBody] User user)
+        public async Task<User> Post([FromBody] UserRequestModel userRequestModel)
         {
+            var user = _mapper.Map<User>(userRequestModel);
             return await _userService.InsertAsync(user);
         }
         [HttpPut]
