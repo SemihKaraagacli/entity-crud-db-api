@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LMS.Data.entities
+﻿namespace LMS.Data.entities
 {
     public class User:BaseEntity
     {
@@ -15,6 +9,8 @@ namespace LMS.Data.entities
         public string? Lastname { get; set; }
         public int? RoleId { get; set; }
 
+
+        public ICollection<Course> Courses { get; set; }
         public Role Role { get; set; }
     }
 }
